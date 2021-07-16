@@ -6,7 +6,7 @@ name: Github-Action-Logging-System
 
 on: workflow_run
       workflows:
-       -Github-Action-Logging-System
+       -All Workflows
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
