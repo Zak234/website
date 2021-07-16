@@ -4,7 +4,7 @@ name: Github-Action-Logging-System
 
 # Controls when the workflow will run
 
-on: workflow_run
+on: workflow_run:
 workflows:
 -Testing
 
