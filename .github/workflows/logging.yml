@@ -10,16 +10,11 @@ on:
             -Testing
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-
+  job-1:
+    runs-on: ubuntu-latest
     steps:
-     - name: npm install, build, and test
+     - name: Checkout Repository
      - uses: actions/checkout@v2
-       run: |
-          npm install
-          npm run build --if-present
-          npm test
  
      - name: Log artifact
      - uses: actions/upload-artifact@v2
