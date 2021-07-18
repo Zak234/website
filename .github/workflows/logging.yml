@@ -21,7 +21,7 @@ jobs:
           npm run build --if-present
           npm test
  
-     - name: 
+     - name: Log artifact
      - uses: actions/upload-artifact@v2
        with:
           name: GitHub-logs
