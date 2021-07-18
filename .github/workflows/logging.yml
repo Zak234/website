@@ -1,15 +1,12 @@
 name: Github-Action-Logging-System
-
 on: 
     workflow_run:
         workflows:
             -Testing
-
 jobs:
   job-1:
     runs-on: ubuntu-latest
     steps:
- 
      - name: Log artifact
      - uses: actions/upload-artifact@v2
        with:
