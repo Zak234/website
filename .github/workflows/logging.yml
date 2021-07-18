@@ -6,8 +6,8 @@ name: Github-Action-Logging-System
 
 on: 
 workflow_run:
-workflows:
--Testing
+    workflows:
+        -Testing
 
 jobs:
 build:
