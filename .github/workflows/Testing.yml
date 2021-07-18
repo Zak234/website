@@ -36,7 +36,7 @@ jobs:
           echo test, and deploy your project.
           
       - name: Log artifact
-      - uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: GitHub-logs
           path: github-logs.txt
