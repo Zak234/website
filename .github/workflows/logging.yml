@@ -9,8 +9,6 @@ jobs:
   job-1:
     runs-on: ubuntu-latest
     steps:
-     - name: Checkout Repository
-     - uses: actions/checkout@v2
  
      - name: Log artifact
      - uses: actions/upload-artifact@v2
