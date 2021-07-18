@@ -5,18 +5,24 @@ name: Github-Action-Logging-System
 # Controls when the workflow will run
 
 on: 
-workflow_run:
-    workflows:
-        -Testing
+    workflow_run:
+        workflows:
+            -Testing
 
 jobs:
-build:
-runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-steps:
-  - uses: actions/checkout@v2
-  - name: Uploads-Github-Logs
-    uses: actions/upload-artifact@v2
-    with:
+    steps:
+     - name: npm install, build, and test
+     - uses: actions/checkout@v2
+       run: |
+          npm install
+          npm run build --if-present
+          npm test
+ 
+     - name: 
+     - uses: actions/upload-artifact@v2
+       with:
           name: GitHub-logs
           path: github-logs.txt
