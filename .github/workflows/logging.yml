@@ -1,18 +1,22 @@
 name: Github-Action-Logging-System
 on: 
-    workflow_run:
-        workflows:
-            -Testing
+  workflow_run:
+    workflows: [Testing]
+    types: [completed]
+        
 jobs:
-  - name: Download artifact
-        uses: actions/github-script@v4
-        with:
-          script: |
-            // Retrieve metadata about the artifacts of the last workflow
-            // https://octokit.github.io/rest.js/v18#actions-list-workflow-run-artifacts
-            const artifacts = await github.actions.listWorkflowRunArtifacts({
-               owner: context.repo.owner,
-               repo: context.repo.repo,
-               run_id: context.payload.workflow_run.id,
-            });
-            const artifactData = artifacts.data.artifacts[0]
+ job1:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Download artifact
+     uses: actions/github-script@v4
+     with:
+       script: |
+         // Retrieve metadata about the artifacts of the last workflow
+         // https://octokit.github.io/rest.js/v18#actions-list-workflow-run-artifacts
+         const artifacts = await github.actions.listWorkflowRunArtifacts({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            run_id: context.payload.workflow_run.id,
+         });
+         const artifactData = artifacts.data.artifacts[0]
