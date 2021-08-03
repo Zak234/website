@@ -20,9 +20,9 @@ jobs:
             run_id: context.payload.workflow_run.id,
          });
          const artifactData = artifacts.data.artifacts[0]
-   - name: Upload math result for job 2
+   - name: Upload Github Artifact
      uses: actions/upload-artifact@v2
      with:
           name: logs
-          path: website/logs.txt
+          path: logs.txt
 
