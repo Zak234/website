@@ -26,7 +26,8 @@ jobs:
           username: ${{ github.actor }}
           team: 'octocats'
           GITHUB_TOKEN: ${{ secrets.PAT }}
-        if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
+ 
+      - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
       # Post comment based on the previous action's result
       - name: Post Comment
         uses: actions/github-script@v4
