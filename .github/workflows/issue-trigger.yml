@@ -28,7 +28,7 @@ jobs:
  
       - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
       # Post comment based on the previous action's result
-      - name: Post Comment
+        name: Post Comment
         uses: actions/github-script@v4
         id: post-comment
         with:
