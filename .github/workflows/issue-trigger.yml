@@ -26,6 +26,7 @@ jobs:
           username: ${{ github.actor }}
           team: 'octocats'
           GITHUB_TOKEN: ${{ secrets.PAT }}
+        if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
       # Post comment based on the previous action's result
       - name: Post Comment
         uses: actions/github-script@v4
@@ -33,6 +34,5 @@ jobs:
         with:
             script: |
               const results = ${{ steps.check-labels.outputs.result }}
-              if: ${{ steps.checkUserMember.outputs.isTeamMember == 'false' }}
               const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/post-labels-comment.js')
               script({g: github, c:context}, results)
