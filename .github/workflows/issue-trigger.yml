@@ -24,7 +24,7 @@ jobs:
         with:
           username: ${{ github.actor }}
           team: 'website'
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
  
       - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
       # Post comment based on the previous action's result
