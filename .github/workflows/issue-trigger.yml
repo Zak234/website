@@ -20,11 +20,10 @@ jobs:
             const checkLabels = script({g: github, c: context})
             return checkLabels
       - uses: tspascoal/get-user-teams-membership@v1
-      - name: Get User
         id: checkUserMember
         with:
           username: ${{ github.actor }}
-          team: 'octocats'
+          team: 'website'
           GITHUB_TOKEN: ${{ secrets.PAT }}
  
       - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
