@@ -25,7 +25,7 @@ jobs:
           username: ${{ github.actor }}
           organization: 'hackforla'
           team: 'website-write'
-          GITHUB_TOKEN: ${{ secrets.HACKFORLA }}
+          GITHUB_TOKEN: ${{ secrets.ACCESSTEAMS }}
  
       - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
       # Post comment based on the previous action's result
