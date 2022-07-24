@@ -7,15 +7,7 @@ var context;
 const statusUpdatedLabel = 'Status: Updated';
 const toUpdateLabel = 'To Update !';
 const inactiveLabel = '2 weeks inactive';
-const updatedByDays = 3; // number of days ago to check for to update label
-const inactiveUpdatedByDays = 14; // number of days ago to check for inactive label
-const commentByDays = 7; // number of days ago to check for comment by assignee
-const threeDayCutoffTime = new Date()
-threeDayCutoffTime.setDate(threeDayCutoffTime.getDate() - updatedByDays)
-const sevenDayCutoffTime = new Date()
-sevenDayCutoffTime.setDate(sevenDayCutoffTime.getDate() - commentByDays)
-const fourteenDayCutoffTime = new Date()
-fourteenDayCutoffTime.setDate(fourteenDayCutoffTime.getDate() - inactiveUpdatedByDays)
+
 
 /**
  * The main function, which retrieves issues from a specific column in a specific project, before examining the timeline of each issue for outdatedness. If outdated, the old status label is removed, and an updated is requested. Otherwise, the issue is labeled as updated.
