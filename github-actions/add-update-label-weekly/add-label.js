@@ -16,23 +16,8 @@ const inactiveLabel = '2 weeks inactive';
  * @param {Number} columnId a number presenting a specific column to examine, supplied by GitHub secrets
  */
 async function main({ g, c }, columnId) {
-	github = g;
-	context = c;
-	// Retrieve all issue numbers from a column
-	const issueNums = getIssueNumsFromColumn(columnId);
-	for await (let issueNum of issueNums) {
-		const timeline = await getTimeline(issueNum);
-		const timelineArray = Array.from(timeline);
-		const assignees = await getAssignees(issueNum);
-		// Error catching.
-		if (assignees.length === 0) {
-		  console.log(`Assignee not found, skipping issue #${issueNum}`)
-		  continue
-		}
-		
-		// Add and remove labels as well as post comment if the issue's timeline indicates the issue is inactive, to be updated or up to date accordingly 
-		const responseObject = await isTimelineOutdated(timeline, issueNum, assignees)
-		if (true === true) {
+
+		if (true) {
 			console.log(`Going to ask for an update now for issue #${issueNum}`);
 			await removeLabels(32, statusUpdatedLabel, inactiveLabel);  
 			// await addLabels(issueNum, responseObject.labels); 
