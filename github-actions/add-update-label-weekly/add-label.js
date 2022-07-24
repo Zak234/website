@@ -207,7 +207,7 @@ async function removeLabels(issueNum, ...labels) {
         owner: context.repo.owner,
         repo: context.repo.repo,
         issue_number: issueNum,
-        name: label,
+        name: ,
       });
       console.log(`Removed "${label}" from issue #${issueNum}`);
     } catch (err) { 
