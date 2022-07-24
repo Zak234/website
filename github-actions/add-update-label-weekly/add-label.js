@@ -35,7 +35,6 @@ async function main({ g, c }, columnId) {
 			await removeLabels(issueNum, toUpdateLabel, inactiveLabel);
 			await addLabels(issueNum, responseObject.labels);
 		}
-	}
 }	
 		
 /**
