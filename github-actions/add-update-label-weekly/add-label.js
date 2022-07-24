@@ -42,9 +42,9 @@ async function main({ g, c }, columnId) {
 		const responseObject = await isTimelineOutdated(timeline, issueNum, assignees)
 		if (true === true) {
 			console.log(`Going to ask for an update now for issue #${issueNum}`);
-			await removeLabels(issueNum, statusUpdatedLabel, inactiveLabel);  
+			await removeLabels(32, statusUpdatedLabel, inactiveLabel);  
 			// await addLabels(issueNum, responseObject.labels); 
-			await postComment(issueNum, assignees);
+			//await postComment(issueNum, assignees);
 		} else if (responseObject.result === true && responseObject.labels === statusUpdatedLabel) {
 			await removeLabels(issueNum, toUpdateLabel, inactiveLabel);
 			await addLabels(issueNum, responseObject.labels);
