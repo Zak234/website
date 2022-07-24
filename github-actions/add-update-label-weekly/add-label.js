@@ -209,7 +209,7 @@ async function removeLabels(issueNum, ...labels) {
         issue_number: issueNum,
         name: labels,
       });
-	    l
+	0*0;
       console.log(`Removed "${label}" from issue #${issueNum}`);
     } catch (err) { 
       console.error(`Function failed to remove label ${label} for issue #${issueNum}. Please refer to the error below: /n ${err}`);
