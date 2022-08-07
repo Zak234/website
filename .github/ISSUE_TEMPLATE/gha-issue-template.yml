@@ -1,0 +1,47 @@
+name: "Github Actions"
+description: This is to create a new GHA
+title: "Sample form for GitHub actions "
+body:
+  - type: dropdown
+    id: dependency
+    attributes:
+      label: Is there a dependency?
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+  - type: textarea
+    id: dependency-explanation
+    attributes:
+      label: If Yes, please explain
+  - type: textarea
+    id: overview
+    attributes:
+      label: "Overview"
+      description: "As a developer, we have to ensure that our kanban board is organized for all teams so that productivity is high. For this issue, we are creating a sorter that will move closed issues and PRs to the correct column by their labels when they are closed."
+      placeholder: |
+        Clearly state the purpose of this issue in 2 sentences or less!
+  - type: textarea
+    attributes:
+      label: "Action Items/Pseudo-code"
+      value:  |
+        - [ ] I have read the [CONTRIBUTING.md]()
+        - [ ] I have made corresponding changes to the documentation
+        - [ ] My changes generate no lint errors
+        - [ ] I have added tests that prove my fix is effective or that my feature works
+        - [ ] New and existing unit tests pass locally with my changes
+  - type: textarea
+    id: Resources
+    attributes:
+      label: "Resources-instructions"
+      description: "Never done GitHub actions? [Start here!](https://docs.github.com/en/actions)
+        Note that you might want to do something outside the scope of the above psudo-code. If so, be sure to leave comments in your PR or this issue that justifies your reasoning. If you feel you need guidance, be sure to reach out! We cannot foresee whether this issue is solvable, or what hard decisions have to be made, but we would love to hear and help you!"
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: This is to create a new GHA
+      options:
+        - label: I have searched the existing issues
+          required: true
