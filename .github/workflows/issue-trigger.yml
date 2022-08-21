@@ -1,6 +1,6 @@
 name: Issue Trigger
 on:
-  workflow dispatch
+  workflow-dispatch
 
 jobs:
   Add-Missing-Labels-To-Issues:
